@@ -2,8 +2,11 @@
 
 > Backend API for Blogging application
 
-
 ![database diagram](./img/database-designer.jpeg)
+
+## Prerequisites
+
+- Node.js 16+
 
 ## Install Dependencies
 
@@ -116,7 +119,7 @@ Segundo, realizaría un enfoque integral que cubra la identificación, solución
 Posibles soluciones:
 
 1. Balanceo de carga para distribuir el tráfico de manera uniforme entre los microservicios.
-2. Redundancia en microservicios críticos para asegurar que, si una instancia falla, otras  puedan tomar el control de manera transparente, implementando replicación de servicios.
+2. Redundancia en microservicios críticos para asegurar que, si una instancia falla, otras puedan tomar el control de manera transparente, implementando replicación de servicios.
 3. Tolerancia a fallos evitando interrupciones en todo el sistema.
 4. Utilizar bases de datos distribuidas con replicación incorporada.
 5. Utilizar herramientas de orquestación de contenedores para realizar despliegues graduales.
