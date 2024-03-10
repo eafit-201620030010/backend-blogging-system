@@ -1,0 +1,1020 @@
+{
+	"info": {
+		"_postman_id": "207db6d8-875b-458e-950c-15e97f5443d5",
+		"name": "Blogging System",
+		"description": "Backend API for the blogging system application to manage posts, comments, users and authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30581720"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get All Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/posts",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						},
+						"description": "Fetch all posts from database. Includes pagination, filtering, etc"
+					},
+					"response": [
+						{
+							"name": "by categories & tags",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/v1/posts?categories=Data Science&tags=Python",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "categories",
+											"value": "Data Science"
+										},
+										{
+											"key": "tags",
+											"value": "Python"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "88"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 01:54:31 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1710036007"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "326"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"146-BTUGvwBs9k7fKv9g2g0TztzKNys\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"count\": 1,\n    \"pagination\": {},\n    \"data\": [\n        {\n            \"_id\": \"65ed129848c4b2999e20c8df\",\n            \"name\": \"title 3\",\n            \"description\": \"description 3\",\n            \"categories\": [\n                \"Data Science\",\n                \"Web Development\"\n            ],\n            \"tags\": [\n                \"Python\"\n            ],\n            \"user\": \"65ecf832eeae8d2401cf0ad3\",\n            \"createdAt\": \"2024-03-10T01:53:28.268Z\",\n            \"__v\": 0,\n            \"comments\": [],\n            \"id\": \"65ed129848c4b2999e20c8df\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "by categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/v1/posts?categories=Data Science",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "categories",
+											"value": "Data Science"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "87"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 01:55:08 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1710036007"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "326"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"146-BTUGvwBs9k7fKv9g2g0TztzKNys\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"count\": 1,\n    \"pagination\": {},\n    \"data\": [\n        {\n            \"_id\": \"65ed129848c4b2999e20c8df\",\n            \"name\": \"title 3\",\n            \"description\": \"description 3\",\n            \"categories\": [\n                \"Data Science\",\n                \"Web Development\"\n            ],\n            \"tags\": [\n                \"Python\"\n            ],\n            \"user\": \"65ecf832eeae8d2401cf0ad3\",\n            \"createdAt\": \"2024-03-10T01:53:28.268Z\",\n            \"__v\": 0,\n            \"comments\": [],\n            \"id\": \"65ed129848c4b2999e20c8df\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "bu tags",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/v1/posts?tags=Go",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "tags",
+											"value": "Go"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "86"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Mar 2024 01:55:36 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1710036007"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "912"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"390-B2U+gXiUiH+8dIcWvnHWf0AjHAc\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"count\": 1,\n    \"pagination\": {},\n    \"data\": [\n        {\n            \"_id\": \"65ed05f1200a8247838186cb\",\n            \"name\": \"title 1\",\n            \"description\": \"description 1\",\n            \"categories\": [\n                \"Mobile Development\",\n                \"Web Development\"\n            ],\n            \"tags\": [\n                \"Go\"\n            ],\n            \"user\": \"65ecf832eeae8d2401cf0ad3\",\n            \"createdAt\": \"2024-03-10T00:59:29.843Z\",\n            \"__v\": 0,\n            \"comments\": [\n                {\n                    \"_id\": \"65ed063d200a8247838186d6\",\n                    \"title\": \"comment 2\",\n                    \"text\": \"I learned a lot\",\n                    \"post\": \"65ed05f1200a8247838186cb\",\n                    \"user\": \"65ecf832eeae8d2401cf0ad3\",\n                    \"createdAt\": \"2024-03-10T01:00:45.106Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"65ed0641200a8247838186da\",\n                    \"title\": \"comment 1\",\n                    \"text\": \"I learned a lot\",\n                    \"post\": \"65ed05f1200a8247838186cb\",\n                    \"user\": \"65ecf832eeae8d2401cf0ad3\",\n                    \"createdAt\": \"2024-03-10T01:00:49.305Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"65ed06543273b46cd4604365\",\n                    \"title\": \"comment 3\",\n                    \"text\": \"I learned a lot\",\n                    \"post\": \"65ed05f1200a8247838186cb\",\n                    \"user\": \"65ecf832eeae8d2401cf0ad3\",\n                    \"createdAt\": \"2024-03-10T01:01:08.973Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"id\": \"65ed05f1200a8247838186cb\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Single Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/posts/65ed1f45f9a12d8a7b8f7258",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"65ed1f45f9a12d8a7b8f7258"
+							]
+						},
+						"description": "Get single post by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDgxMWM4YWUwZGYzYWIxZGQ0NjU1ZSIsImlhdCI6MTY5OTIyNzY5NiwiZXhwIjoxNzAxODE5Njk2fQ.OwYUHrEYoIO6YmNDICZwHkiVYhiS73kc_UMD3gW1L9k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"title 4\",\n    \"description\": \"description 4\",\n    \"categories\": [\n        \"Web Development\"\n    ],\n    \"tags\": [\n        \"Go\"\n    ]\n    \n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/posts",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						},
+						"description": "Add new post to database. Must be authenticated and must be publisher or admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"description\": \"description 4 update\"}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/posts/65ed1f45f9a12d8a7b8f7258",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"65ed1f45f9a12d8a7b8f7258"
+							]
+						},
+						"description": "Update single post in database"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/posts/65ed1f45f9a12d8a7b8f7258",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"65ed1f45f9a12d8a7b8f7258"
+							]
+						},
+						"description": "Delete post from database"
+					},
+					"response": []
+				}
+			],
+			"description": "Posts CRUD funtionality"
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"TOKEN\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Jhon Doe\",\n    \"email\": \"Jhon@gmail.com\",\n    \"password\": \"123456\",\n    \"role\": \"publisher\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						},
+						"description": "Add user to database with encrypted password"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"TOKEN\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"Jhon@gmail.com\",\n    \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Logged in User via Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/me",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Routes for user authentication including register, login, etc"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						},
+						"description": "Get all users(admin)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/65ed1e3af9a12d8a7b8f722b",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"65ed1e3af9a12d8a7b8f722b"
+							]
+						},
+						"description": "Get single user by id (admin)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nate Smith\",\n    \"email\": \"nate@gmail.com\",\n    \"password\": \"123456\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/users/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						},
+						"description": "Add user to database (admin)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nate Johnson\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/users/65ed1e3af9a12d8a7b8f722b",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"65ed1e3af9a12d8a7b8f722b"
+							]
+						},
+						"description": "Update user in database (admin)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/65ed1e3af9a12d8a7b8f722b",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"65ed1e3af9a12d8a7b8f722b"
+							]
+						},
+						"description": "Delete user from database (admin)"
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD functionality for users only available to admins"
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Get All Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comments"
+							]
+						},
+						"description": "Get all comments form database and populate with post name and description"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comments For Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/posts/65ed1f45f9a12d8a7b8f7258/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"65ed1f45f9a12d8a7b8f7258",
+								"comments"
+							]
+						},
+						"description": "Fetch the comments for a specific post"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/comments/65ed065b3273b46cd4604369",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comments",
+								"65ed065b3273b46cd4604369"
+							]
+						},
+						"description": "Fetch a comments from database by id and populate post name and description"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Coments For Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"comment\",\n    \"text\": \"I learned a lot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/posts/65ed1f45f9a12d8a7b8f7258/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"65ed1f45f9a12d8a7b8f7258",
+								"comments"
+							]
+						},
+						"description": "Insert comment for a specific post"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"comment update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/comments/65ed1fd4f9a12d8a7b8f7278",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comments",
+								"65ed1fd4f9a12d8a7b8f7278"
+							]
+						},
+						"description": "Update comment in database"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/comments/65ed1fd4f9a12d8a7b8f7278",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comments",
+								"65ed1fd4f9a12d8a7b8f7278"
+							]
+						},
+						"description": "Remove comment from database"
+					},
+					"response": []
+				}
+			],
+			"description": "Comments CRUD funtionality"
+		}
+	]
+}

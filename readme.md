@@ -103,3 +103,19 @@ console.log("Test Case 3:", example3 === 15 ? "Passed" : "Failed");
 6. C. - Make a driver-based error provider to handle errors in all classes that can issue errors.
 7. C. - parseDataForProducts()
 8. D. - Put them in a .env file, load data from it into a configuration system, then request the credentials from a database service provider.
+
+## Scenario Analysis
+
+Lo primero sería implementar un mecanismo de monitoreo y registro en todo el sistema para realizar un seguimiento de las métricas de rendimiento, latencia y tasas de error.
+
+Segundo, realizaría un enfoque integral que cubra la identificación, solución y estrategias para la alta disponibilidad y resiliencia.
+
+Posibles soluciones:
+
+1. Balanceo de carga para distribuir el tráfico de manera uniforme entre los microservicios.
+2. Redundancia en microservicios críticos para asegurar que, si una instancia falla, otras  puedan tomar el control de manera transparente, implementando replicación de servicios.
+3. Tolerancia a fallos evitando interrupciones en todo el sistema.
+4. Utilizar bases de datos distribuidas con replicación incorporada.
+5. Utilizar herramientas de orquestación de contenedores para realizar despliegues graduales.
+6. Utilizar CDN para reducir latencias.
+7. Actualizar la arquitectura del sistema en función de las métricas de rendimiento.
