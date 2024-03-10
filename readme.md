@@ -2,6 +2,9 @@
 
 > Backend API for Blogging application
 
+
+![database diagram](./img/database-designer.jpeg)
+
 ## Install Dependencies
 
 ```
@@ -20,7 +23,7 @@ npm start
 
 ## Postman Docs
 
-Extensive documentation with examples [here](https://documenter.getpostman.com/view/30581720/2sA2xh3DCS)
+Documentation with examples [here](https://documenter.getpostman.com/view/30581720/2sA2xh3DCS)
 
 # Blogging Backend API Specifications
 
